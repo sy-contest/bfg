@@ -1,28 +1,19 @@
 document.addEventListener('DOMContentLoaded', () => {
     const likeButton = document.getElementById('likeButton');
-    const likeCount = document.getElementById('likeCount');
-    let count = parseInt(localStorage.getItem('likeCount') || '0');
-    let hasLiked = localStorage.getItem('hasLiked') === 'true';
+    const postId = 'blog-post-1'; // Replace this with a unique identifier for each blog post
+    let isLiked = localStorage.getItem(`liked_${postId}`) === 'true';
 
     updateLikeButton();
 
     likeButton.addEventListener('click', () => {
-        if (!hasLiked) {
-            count++;
-            hasLiked = true;
-            animateHeart();
-        } else {
-            count--;
-            hasLiked = false;
-        }
-        localStorage.setItem('likeCount', count);
-        localStorage.setItem('hasLiked', hasLiked);
+        isLiked = !isLiked;
+        localStorage.setItem(`liked_${postId}`, isLiked);
         updateLikeButton();
+        animateHeart();
     });
 
     function updateLikeButton() {
-        likeCount.textContent = count;
-        if (hasLiked) {
+        if (isLiked) {
             likeButton.classList.add('liked');
             likeButton.querySelector('i').classList.remove('far');
             likeButton.querySelector('i').classList.add('fas');
