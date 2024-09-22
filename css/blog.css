@@ -1,0 +1,116 @@
+#blog {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+#blog h1 {
+    text-align: center;
+    margin-bottom: 3rem; /* Increased from 2rem to 3rem */
+    font-size: 3rem; /* Increased from default size */
+    margin-top: -4rem; /* Added to move the title up */
+}
+
+.blog-posts {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.blog-post {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    overflow: hidden; /* Add this to contain the zoomed image */
+}
+
+.blog-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 0.5rem;
+    transition: transform 0.3s ease; /* Add this for smooth zoom effect */
+}
+
+.blog-post:hover .blog-image {
+    transform: scale(1.1); /* Zoom in by 10% on hover */
+}
+
+.blog-post h2 {
+    font-size: 1.2rem;
+    margin-top: 0;
+    margin-bottom: 0.3rem; /* Reduced from 0.5rem to make room for the date */
+}
+
+.blog-post a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.blog-title {
+    display: inline-block;
+    line-height: 1.4; /* Adjust this value to control line spacing */
+}
+
+.blog-title .line {
+    display: inline-block;
+    position: relative;
+    overflow: hidden;
+}
+
+.blog-title .line span {
+    display: inline-block;
+    position: relative;
+    transition: transform 0.3s ease;
+}
+
+.blog-title .line::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+    background-color: var(--accent-color);
+    transform: translateX(-101%);
+    transition: transform 0.3s ease;
+}
+
+/* Add this new rule for the second line */
+.blog-title .line:nth-child(2)::after {
+    transition-delay: 0.1s; /* Adjust this value to control the delay */
+}
+
+.blog-post:hover .blog-title .line::after {
+    transform: translateX(0);
+}
+
+.blog-date {
+    font-size: 0.9rem;
+    color: #666; /* A subtle gray color */
+    margin: 0;
+    text-decoration: none;
+}
+
+.show-more-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+.show-more-btn {
+    background-color: var(--accent-color);
+    color: var(--bg-color);
+    border: none;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.show-more-btn:hover {
+    background-color: var(--text-color);
+}

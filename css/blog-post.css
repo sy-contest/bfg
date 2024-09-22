@@ -1,0 +1,352 @@
+.blog-post {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.blog-post h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.blog-meta {
+    font-style: italic;
+    color: #666;
+    margin-bottom: 1rem;
+}
+
+.blog-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+    border-radius: 10px; /* Add border-radius to the image itself */
+}
+
+.blog-content {
+    line-height: 1.6;
+}
+
+.blog-content h2 {
+    font-size: 1.8rem;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+}
+
+.blog-content p {
+    margin-bottom: 1rem;
+}
+
+.blog-content ul {
+    margin-bottom: 1rem;
+    padding-left: 2rem;
+}
+
+@media (max-width: 768px) {
+    .blog-post {
+        padding: 1rem;
+    }
+
+    .blog-post h1 {
+        font-size: 2rem;
+    }
+
+    .blog-content h2 {
+        font-size: 1.5rem;
+    }
+}
+
+main {
+    margin-top: -6rem;
+}
+
+.share-buttons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 1rem;
+}
+
+.share-buttons button {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    background-color: #f0f0f0;
+    color: #333;
+    cursor: pointer;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    transition: background-color 0.3s ease;
+}
+
+.share-buttons button:hover {
+    background-color: #e0e0e0;
+}
+
+.share-buttons button i {
+    margin-right: 5px;
+}
+
+@media (max-width: 768px) {
+    .share-buttons {
+        flex-direction: column;
+    }
+}
+
+.share-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-bottom: 1rem;
+}
+
+.share-button:hover {
+    background-color: #0056b3;
+}
+
+.share-button i {
+    margin-right: 10px; /* Add space between icon and text */
+}
+
+.share-popup {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.4);
+}
+
+.share-popup-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 500px;
+    border-radius: 5px;
+}
+
+.close-popup {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close-popup:hover,
+.close-popup:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.share-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.share-buttons button {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.share-buttons button i {
+    margin-right: 10px;
+}
+
+@media (max-width: 768px) {
+    .share-buttons {
+        flex-direction: column;
+    }
+}
+
+.blog-actions {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 1rem;
+}
+
+.share-button,
+.like-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: all 0.3s ease;
+     /* Set a fixed height for both buttons */
+}
+
+.share-button {
+    background-color: #007bff;
+    color: white;
+}
+
+.share-button:hover {
+    background-color: #0056b3;
+}
+
+.like-button {
+    background: none;
+    color: #333;
+    padding: 0;
+    position: relative;
+    width: 44px;
+    height: 44px;
+    margin-top: -15px;
+}
+
+.like-button i {
+    font-size: 28px;
+}
+
+.like-button:hover {
+    color: #ff6b6b;
+}
+
+.like-button.liked {
+    color: #ff6b6b;
+}
+
+#likeCount {
+    font-size: 12px;
+    position: absolute;
+    top: 50%;
+    font-weight: bold;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #333; /* Black for light mode */
+    text-shadow: none;
+}
+
+/* Dark mode styles */
+.dark-mode #likeCount {
+    color: #fff; /* White for dark mode */
+}
+
+.heart-animation {
+    position: absolute;
+    font-size: 28px; /* Match the size of the heart icon */
+    pointer-events: none;
+    animation: float-up 1s ease-out;
+    opacity: 0;
+}
+
+@keyframes float-up {
+    0% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+}
+
+.blog-image-container {
+    margin-left: -2rem;
+    margin-right: -2rem;
+    margin-bottom: 1rem;
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.image-credit {
+    font-size: 0.8rem;
+    color: #666;
+    text-align: right;
+    margin-top: 0.5rem;
+    margin-right: 2rem;
+    font-style: italic;
+}
+
+.image-credit a {
+    color: #000;
+    text-decoration: none;
+}
+
+.image-credit a:hover {
+    text-decoration: underline;
+}
+
+/* Dark mode styles */
+.dark-mode .image-credit a {
+    color: #fff;
+}
+
+@media (max-width: 768px) {
+    .blog-post {
+        padding: 1rem;
+    }
+
+    .blog-image-container {
+        margin-left: -1rem;
+        margin-right: -1rem;
+        border-radius: 8px;
+    }
+
+    .blog-image {
+        border-radius: 8px; /* Adjust border-radius for mobile */
+    }
+
+    .image-credit {
+        margin-right: 1rem;
+    }
+}
+
+.support-us {
+    margin-top: 2rem;
+    padding: 1.5rem;
+    background-color: #f8f8f8;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.support-us h2 {
+    margin-bottom: 1rem;
+}
+
+.donate-button {
+    display: inline-block;
+    padding: 0.8rem 1.5rem;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.donate-button:hover {
+    background-color: #0056b3;
+}
+
+/* Dark mode styles */
+.dark-mode .support-us {
+    background-color: #161616;
+    color: #fff;
+}

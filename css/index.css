@@ -1,0 +1,581 @@
+:root {
+    --bg-color: #ffffff;
+    --text-color: #000000;
+    --accent-color: #000000;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+.dark-mode {
+    --bg-color: #000000;
+    --text-color: #ffffff;
+    --accent-color: #ffffff;
+}
+
+header {
+    background-color: var(--accent-color);
+    padding: 1rem;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    height: 60px; /* Increased from 40px */
+    cursor: pointer;
+}
+
+nav ul {
+    display: flex;
+    list-style-type: none;
+    gap: 2rem; /* Added gap between menu items */
+}
+
+nav ul li {
+    margin-right: 0; /* Remove the previous margin */
+}
+
+nav ul li a {
+    color: var(--bg-color);
+    text-decoration: none;
+    font-size: 1.2rem; /* Increased from default size */
+    font-weight: bold; /* Optional: makes the text bolder */
+    position: relative;
+    opacity: 0.7;
+    transition: opacity 0.3s ease;
+}
+
+nav ul li a::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;    
+    bottom: -4px;
+    left: 0;
+    background-color: var(--bg-color);
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition: transform 0.3s ease;
+}
+
+nav ul li a.active {
+    opacity: 1;
+    color: var(--bg-color); /* Changed from #ffffff to var(--bg-color) */
+    position: relative;
+}
+
+nav ul li a.active::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+.dark-mode nav ul li a.active {
+    color: #000000; /* Set to black for dark mode */
+}
+
+nav ul li a:hover {
+    opacity: 1;
+}
+
+nav ul li a:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+#theme-toggle {
+    background-color: var(--text-color);
+    color: var(--bg-color);
+    border: none;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+}
+
+main {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    padding-top: calc(2rem + 60px); /* Add extra padding to account for the sticky header */
+}
+
+section {
+    margin-bottom: 2rem;
+}
+
+h1, h2 {
+    color: var(--accent-color);
+}
+
+footer {
+    background-color: var(--accent-color);
+    color: var(--bg-color);
+    padding: 0.1rem 1rem;
+    width: auto;
+    font-size: 0.7em;
+    line-height: 1.2;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.social-icons {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center; /* Add this line */
+}
+
+.social-icon img {
+    width: 16px; /* Reduced from 20px */
+    height: 16px; /* Reduced from 20px */
+}
+
+/* Hide dark mode icons in light mode */
+.dark-mode-icon {
+    display: none;
+}
+
+/* Show dark mode icons and hide light mode icons in dark mode */
+.dark-mode .light-mode-icon {
+    display: none;
+}
+
+.dark-mode .dark-mode-icon {
+    display: inline;
+}
+
+@media (max-width: 600px) {
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .social-icons {
+        margin-top: 0.5rem;
+        width: 100%; /* Add this line */
+        justify-content: center; /* Add this line */
+    }
+}
+
+nav a {
+    text-decoration: none;
+}
+
+/* Add these styles for the toggle switch */
+.theme-switch-wrapper {
+    display: flex;
+    align-items: center;
+}
+
+.theme-switch {
+    display: inline-block;
+    height: 34px;
+    position: relative;
+    width: 60px;
+}
+
+.theme-switch input {
+    display: none;
+}
+
+.slider {
+    background-color: #ccc;
+    bottom: 0;
+    cursor: pointer;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transition: .4s;
+}
+
+.slider:before {
+    background-color: #fff;
+    bottom: 4px;
+    content: "";
+    height: 26px;
+    left: 4px;
+    position: absolute;
+    transition: .4s;
+    width: 26px;
+    z-index: 2;
+}
+
+.slider .fa-sun,
+.slider .fa-moon {
+    color: #000000;
+    font-size: 16px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: .4s;
+    z-index: 1;
+}
+
+.slider .fa-sun {
+    right: 5px;
+}
+
+.slider .fa-moon {
+    left: 5px;
+}
+
+input:checked + .slider {
+    background-color: #000000;
+}
+
+input:checked + .slider:before {
+    transform: translateX(26px);
+}
+
+input:checked + .slider .fa-sun,
+input:checked + .slider .fa-moon {
+    color: #ffffff;
+}
+
+.slider.round {
+    border-radius: 34px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
+
+/* Dark mode styles */
+.dark-mode {
+    --bg-color: #000000;
+    --text-color: #ffffff;
+    --accent-color: #ffffff;
+}
+
+@media (min-width: 768px) {
+    #our-story {
+        padding: 0 2rem;
+    }
+
+    .story-container {
+        flex-direction: row;
+        align-items: flex-start;
+        max-width: 1000px;
+    }
+
+    .story-image {
+        width: 40%;
+        margin-right: 2rem;
+        flex-shrink: 0;
+    }
+
+    .story-text-wrapper {
+        width: 60%;
+    }
+
+    .story-text h2 {
+        font-size: 2.5rem;
+        text-align: left;
+        margin-top: 0;
+    }
+
+    .story-text p {
+        text-align: justify;
+    }
+}
+
+/* Existing styles... */
+
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+}
+
+.bar {
+    width: 25px;
+    height: 3px;
+    background-color: var(--bg-color);
+    margin: 3px 0;
+    transition: all 0.3s ease-in-out;
+}
+
+.fullscreen-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--bg-color);
+    z-index: 1001; /* Increase z-index to be above the sticky header */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0s 0.3s;
+}
+
+.fullscreen-menu.active {
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.3s ease, visibility 0s;
+}
+
+.fullscreen-menu ul {
+    list-style-type: none;
+    padding: 0;
+    text-align: center;
+}
+
+.fullscreen-menu ul li {
+    margin: 20px 0;
+}
+
+.fullscreen-nav-link {
+    color: #999999; /* Gray-ish color for inactive links */
+    font-size: 24px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.fullscreen-nav-link:hover,
+.fullscreen-nav-link:focus {
+    color: var(--text-color); /* Use text color for hover */
+}
+
+.fullscreen-nav-link.active {
+    color: var(--text-color); /* Use text color for active link */
+    position: relative;
+}
+
+.fullscreen-nav-link.active::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: -4px;
+    left: 0;
+    background-color: var(--text-color);
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+.close-menu {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-weight: bold;
+    font-size: 30px;
+    color: var(--text-color);
+    cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+    .menu-toggle {
+        display: flex;
+    }
+
+    .nav-menu {
+        display: none;
+    }
+}
+
+#our-story {
+    padding: 2rem 1rem;
+    width: 100%;
+}
+
+.story-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.story-image {
+    width: 100%;
+    margin: 1rem 0;
+}
+
+.story-image img {
+    max-width: 100%;
+    height: auto;
+    border: 1px solid #000000;
+}
+
+.story-text h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.story-text p {
+    margin-bottom: 1rem;
+    line-height: 1.6;
+}
+
+/* Styles for screens up to 1023px */
+@media (max-width: 1023px) {
+    .story-container {
+        max-width: 90%;
+    }
+}
+
+/* Desktop layout */
+@media (min-width: 1024px) {
+    #our-story {
+        padding: 0 2rem;
+    }
+
+    .story-container {
+        flex-direction: row;
+        align-items: stretch;
+        max-width: 1200px;
+    }
+
+    .story-image {
+        width: 40%;
+        margin-right: 2rem;
+        flex-shrink: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid var(--text-color); /* Changed from #000000 to var(--text-color) */
+    }
+
+    .story-image img {
+        max-width: 100%;
+        max-height: 100%;
+        width: auto;
+        height: auto;
+        object-fit: contain;
+        border: none;
+        background-color: var(--text-color); /* Added this line */
+    }
+
+    .story-text-wrapper {
+        width: 60%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .story-text h2 {
+        font-size: 2.5rem;
+        text-align: left;
+        margin-top: 0;
+    }
+
+    .story-text p {
+        text-align: justify;
+    }
+}
+
+/* Add these styles for the hamburger menu animation */
+.menu-toggle {
+    transition: transform 0.3s ease-in-out;
+}
+
+.menu-toggle.active {
+    transform: rotate(90deg);
+}
+
+.bar {
+    transition: all 0.3s ease-in-out;
+}
+
+.menu-toggle.active .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+
+.menu-toggle.active .bar:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-toggle.active .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+}
+
+.story-text a {
+    color: inherit;
+    text-decoration: none;
+    border-bottom: 1px solid currentColor;
+    transition: border-bottom-color 0.3s ease;
+}
+
+.story-text a:hover,
+.story-text a:focus {
+    border-bottom-color: transparent;
+}
+
+#loading-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #ffffff; /* Fully opaque white background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.loading-content {
+    text-align: center;
+}
+
+.loading-gif {
+    width: 100px;
+    height: 100px;
+}
+
+.loading-text {
+    margin-top: 20px;
+    font-size: 24px;
+    color: #333;
+}
+
+.loading-dots::after {
+    content: '';
+    animation: loading-dots 1.5s infinite;
+}
+
+@keyframes loading-dots {
+    0% { content: ''; }
+    25% { content: '.'; }
+    50% { content: '..'; }
+    75% { content: '...'; }
+}
+
+/* Dark mode styles */
+.dark-mode #loading-overlay {
+    background-color: #000000; /* Fully opaque black background for dark mode */
+}
+
+.dark-mode .loading-text {
+    color: #fff;
+}

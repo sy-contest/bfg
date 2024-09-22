@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>First Spark - Black Flame Group</title>
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/blog-post.css">
+
+    <link rel="icon" type="image/png" href="images/icon.png">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div id="loading-overlay">
+        <div class="loading-content">
+            <img src="images/loading.gif" alt="Loading..." class="loading-gif">
+            <p class="loading-text">Loading<span class="loading-dots"></span></p>
+        </div>
+    </div>
+    
+    <header>
+        <nav>
+            <a href="index.html">
+                <img src="images/logo.png" alt="Logo" class="logo">
+            </a>
+            <div class="menu-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="blog.html" class="active">Blog</a></li>
+                <li><a href="our-team.html">Our Team</a></li>
+                <li><a href="donate.html">Donate</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="theme-switch-wrapper">
+                <label class="theme-switch" for="checkbox">
+                    <input type="checkbox" id="checkbox" />
+                    <div class="slider round">
+                        <i class="fas fa-sun"></i>
+                        <i class="fas fa-moon"></i>
+                    </div>
+                </label>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <article class="blog-post">
+            <h1>First Spark</h1>
+            <p class="blog-meta">By Ziad AL-Nahlawi | Sep 22, 2024</p>
+            <figure class="blog-image-container">
+                <img src="images/first-spark.jpg" alt="Community Engagement" class="blog-image">
+                <figcaption class="image-credit">Photo by Mike Erskine on <a href="https://unsplash.com/photos/people-having-a-bonfire-S_VbdMTsdiA" target="_blank" rel="noopener noreferrer">Unsplash</a></figcaption>
+            </figure>
+            <div class="blog-actions">
+                <button id="shareButton" class="share-button"><i class="fas fa-share-alt"></i> Share</button>
+                <button id="likeButton" class="like-button">
+                    <i class="far fa-heart"></i>
+                    <span id="likeCount">0</span>
+                </button>
+            </div>
+            <div id="sharePopup" class="share-popup">
+                <div class="share-popup-content">
+                    <span class="close-popup">&times;</span>
+                    <h3>Share this post</h3>
+                    <div class="share-buttons">
+                        <button onclick="shareOnFacebook()"><i class="fab fa-facebook-f"></i> Facebook</button>
+                        <button onclick="shareOnTwitter()"><i class="fab fa-twitter"></i> Twitter</button>
+                        <button onclick="shareOnWhatsApp()"><i class="fab fa-whatsapp"></i> WhatsApp</button>
+                        <button onclick="shareOnTelegram()"><i class="fab fa-telegram-plane"></i> Telegram</button>
+                        <button onclick="copyUrl()"><i class="far fa-copy"></i> Copy URL</button>
+                    </div>
+                </div>
+            </div>
+            <div class="blog-content">
+                <p>Today, September 22, 2024, marks a momentous occasion for the Black Flame Group. After more than a year of intensive research and development, we are thrilled to make our first public appearance. This day represents the "First Spark" of our journey to make the world a better place, help those in need, and improve the quality of life for everyone.</p>
+                <h2>The Name: Black Flame Group</h2>
+                <blockquote>"We are the broken ones who chose to spark a flame" - Born for This by The Score</blockquote>
+                <p>Many of you might be wondering about the meaning behind our name. Why "Black Flame"? Why not red or white? The answer lies in the very essence of our mission and our origins.</p>
+                <p>The black flame represents the pain and suffering that we all feel. It's a acknowledgment of the hardships and challenges that many face, especially in regions like Syria. However, instead of letting this darkness consume us or lead us down a destructive path, we've chosen to channel it into something positive.</p>
+                <p>Our black flame is a symbol of resilience, of taking our pain and transforming it into a force for good. It represents our commitment to use all our energy, even that born from suffering, to make the world better. We are indeed the broken ones, but we've chosen to spark a flame of hope, change, and progress.</p>
+
+                <h2>Our Purpose and Vision</h2>
+                <p>At the core of our mission lies a fundamental understanding of human needs. Maslow's Hierarchy of Needs illustrates the essential requirements for human fulfillment, starting with basic physiological needs and progressing to self-actualization. Unfortunately, due to current conditions in Syria, a significant portion of Syrian citizens struggle to meet even the most basic needs at the bottom of this pyramid.</p>
+
+                <figure class="blog-image-container">
+                    <img src="images/maslow.png" alt="Maslow's Hierarchy of Needs" class="blog-image">
+                    <figcaption>Maslow's Hierarchy of Needs</figcaption>
+                </figure>
+
+                
+                <h2>Our Approach</h2>
+                <p>To address these critical issues, we've developed a multi-faceted approach:</p>
+                <ul>
+                    <li><strong>Leveraging Youth Power:</strong> We believe in the potential of young people to drive positive change.</li>
+                    <li><strong>For-Profit Projects:</strong> Establishing sustainable businesses to directly fund our NGO activities.</li>
+                    <li><strong>Harnessing Technology:</strong> Utilizing innovative solutions to maximize our impact.</li>
+                </ul>
+
+                <h2>Target Sectors</h2>
+                <p>Our initiatives span a wide range of sectors, including but not limited to:</p>
+                <ul>
+                    <li>Preserving the environment</li>
+                    <li>Making food and clothing more affordable and accessible</li>
+                    <li>Creating conducive study environments for students</li>
+                    <li>And much more...</li>
+                </ul>
+
+                <p>We firmly believe that these goals are achievable. As I write this article, I'm filled with happiness and excitement knowing that my dream of starting this NGO is becoming a reality. The journey ahead is challenging, but with determination, innovation, and the support of our community, we can make a lasting positive impact on the lives of many.</p>
+
+                <p>Join us in this exciting journey as we ignite the First Spark of change and work together towards a brighter future for all.</p>
+
+                <div class="support-us">
+                    <h2>Want to Support Us?</h2>
+                    <p>Your contribution can help us make a difference. Every donation, no matter how small, brings us closer to our goals.</p>
+                    <a href="donate.html" class="donate-button">Click Here to Donate</a>
+                </div>
+
+            </div>
+        </article>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2024 Black Flame Group. All rights reserved.</p>
+            <div class="social-icons">
+                <div class="social-icons">
+                    <a href="#" class="social-icon">
+                        <img src="images/facebook-w.png" alt="Facebook" class="light-mode-icon">
+                        <img src="images/facebook-b.png" alt="Facebook" class="dark-mode-icon">
+                    </a>
+                    <a href="#" class="social-icon">
+                        <img src="images/instagram-w.png" alt="Instagram" class="light-mode-icon">
+                        <img src="images/instagram-b.png" alt="Instagram" class="dark-mode-icon">
+                    </a>
+                    <a href="#" class="social-icon">
+                        <img src="images/threads-w.png" alt="Threads" class="light-mode-icon">
+                        <img src="images/threads-b.png" alt="Threads" class="dark-mode-icon">
+                    </a>
+                    <a href="#" class="social-icon">
+                        <img src="images/twitter-w.png" alt="Twitter" class="light-mode-icon">
+                        <img src="images/twitter-b.png" alt="Twitter" class="dark-mode-icon">
+                    </a>
+                    <a href="#" class="social-icon">
+                        <img src="images/linkedin-w.png" alt="LinkedIn" class="light-mode-icon">
+                        <img src="images/linkedin-b.png" alt="LinkedIn" class="dark-mode-icon">
+                    </a>
+                    <a href="#" class="social-icon">
+                        <img src="images/youtube-w.png" alt="YouTube" class="light-mode-icon">
+                        <img src="images/youtube-b.png" alt="YouTube" class="dark-mode-icon">
+                    </a>
+                    <a href="#" class="social-icon">
+                        <img src="images/twitch-w.png" alt="Twitch" class="light-mode-icon">
+                        <img src="images/twitch-b.png" alt="Twitch" class="dark-mode-icon">
+                    </a>
+                    <a href="#" class="social-icon">
+                        <img src="images/tiktok-w.png" alt="TikTok" class="light-mode-icon">
+                        <img src="images/tiktok-b.png" alt="TikTok" class="dark-mode-icon">
+                    </a>
+                    <a href="#" class="social-icon">
+                        <img src="images/whatsapp-w.png" alt="WhatsApp" class="light-mode-icon">
+                        <img src="images/whatsapp-b.png" alt="WhatsApp" class="dark-mode-icon">
+                    </a>
+                    <a href="#" class="social-icon">
+                        <img src="images/telegram-w.png" alt="Telegram" class="light-mode-icon">
+                        <img src="images/telegram-b.png" alt="Telegram" class="dark-mode-icon">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <div class="fullscreen-menu" id="fullscreen-menu">
+        <div class="close-menu" id="close-menu">X</div>
+        <ul>
+            <li><a href="index.html" class="fullscreen-nav-link">Home</a></li>
+            <li><a href="blog.html" class="fullscreen-nav-link active">Blog</a></li>
+            <li><a href="our-team.html" class="fullscreen-nav-link">Our Team</a></li>
+            <li><a href="donate.html" class="fullscreen-nav-link">Donate</a></li>
+            <li><a href="contact.html" class="fullscreen-nav-link">Contact</a></li>
+        </ul>
+    </div>
+
+    <script src="js/script.js"></script>
+    <script src="js/share.js"></script>
+    <script src="js/like.js"></script>
+</body>
+</html>
