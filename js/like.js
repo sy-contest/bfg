@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
     const likeButton = document.getElementById('likeButton');
-    const postId = 'blog-post-1'; // Replace this with a unique identifier for each blog post
+    const postId = 'blog-post-1';
     let isLiked = localStorage.getItem(`liked_${postId}`) === 'true';
 
     updateLikeButton();

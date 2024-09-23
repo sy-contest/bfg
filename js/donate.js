@@ -11,9 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
             qrCodeImage.src = qrCodeSrc;
             qrCodeContainer.style.display = 'block';
 
-            // Remove 'selected' class from all buttons
             donationAmounts.forEach(btn => btn.classList.remove('selected'));
-            // Add 'selected' class to clicked button
             button.classList.add('selected');
         });
     });

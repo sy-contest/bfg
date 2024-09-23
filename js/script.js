@@ -7,7 +7,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const themeToggle = document.getElementById('checkbox');
     const body = document.body;
 
-    // Function to set active link
     const setActiveLink = () => {
         const currentPath = window.location.pathname.split('/').pop();
         const currentHash = window.location.hash || '#home';
@@ -31,10 +30,8 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     };
 
-    // Set active link on page load
     setActiveLink();
 
-    // Update active link when hash changes
     window.addEventListener('hashchange', setActiveLink);
 
     if (mobileMenu) {
@@ -63,35 +60,28 @@ document.addEventListener('DOMContentLoaded', () => {
         link.addEventListener('click', setActiveLink);
     });
 
-    // Function to set the theme
     const setTheme = (isDark) => {
         body.classList.toggle('dark-mode', isDark);
         themeToggle.checked = isDark;
         localStorage.setItem('darkMode', isDark);
     };
 
-    // Check for saved theme preference or use default
     const savedTheme = localStorage.getItem('darkMode');
     if (savedTheme !== null) {
         setTheme(savedTheme === 'true');
     } else {
-        setTheme(false); // Default to light mode
+        setTheme(false); 
     }
 
-    // Theme toggle event listener
     if (themeToggle) {
         themeToggle.addEventListener('change', () => {
             setTheme(themeToggle.checked);
         });
     }
 
-    // Loading overlay
     const loadingOverlay = document.getElementById('loading-overlay');
     
-    // Hide loading overlay when page is fully loaded
     window.addEventListener('load', () => {
         loadingOverlay.style.display = 'none';
     });
-
-    // Existing code...
 });
