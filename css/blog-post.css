@@ -20,7 +20,7 @@
     height: auto;
     display: block;
     object-fit: cover;
-    border-radius: 10px; /* Add border-radius to the image itself */
+    border-radius: 10px;
 }
 
 .blog-content {
@@ -112,7 +112,7 @@ main {
 }
 
 .share-button i {
-    margin-right: 10px; /* Add space between icon and text */
+    margin-right: 10px;
 }
 
 .share-popup {
@@ -197,7 +197,6 @@ main {
     cursor: pointer;
     font-size: 16px;
     transition: all 0.3s ease;
-     /* Set a fixed height for both buttons */
 }
 
 .share-button {
@@ -238,18 +237,17 @@ main {
     font-weight: bold;
     left: 50%;
     transform: translate(-50%, -50%);
-    color: #333; /* Black for light mode */
+    color: #333;
     text-shadow: none;
 }
 
-/* Dark mode styles */
 .dark-mode #likeCount {
-    color: #fff; /* White for dark mode */
+    color: #fff;
 }
 
 .heart-animation {
     position: absolute;
-    font-size: 28px; /* Match the size of the heart icon */
+    font-size: 28px;
     pointer-events: none;
     animation: float-up 1s ease-out;
     opacity: 0;
@@ -293,7 +291,6 @@ main {
     text-decoration: underline;
 }
 
-/* Dark mode styles */
 .dark-mode .image-credit a {
     color: #fff;
 }
@@ -310,7 +307,7 @@ main {
     }
 
     .blog-image {
-        border-radius: 8px; /* Adjust border-radius for mobile */
+        border-radius: 8px;
     }
 
     .image-credit {
@@ -345,7 +342,6 @@ main {
     background-color: #0056b3;
 }
 
-/* Dark mode styles */
 .dark-mode .support-us {
     background-color: #161616;
     color: #fff;

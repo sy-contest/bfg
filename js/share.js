@@ -1,11 +1,9 @@
 function getShareUrl() {
-    // Get the canonical URL if available, otherwise use the current page URL
     const canonicalElement = document.querySelector('link[rel=canonical]');
     return canonicalElement ? canonicalElement.href : window.location.href;
 }
 
 function getShareTitle() {
-    // Get the page title
     return document.title;
 }
 

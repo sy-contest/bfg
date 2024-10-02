@@ -12,7 +12,7 @@
 
 .contact-container {
     display: flex;
-    gap: 4rem;  /* Increased from 2rem to 4rem */
+    gap: 4rem;
     flex-wrap: wrap;
 }
 

@@ -6,9 +6,9 @@
 
 #blog h1 {
     text-align: center;
-    margin-bottom: 3rem; /* Increased from 2rem to 3rem */
-    font-size: 3rem; /* Increased from default size */
-    margin-top: -4rem; /* Added to move the title up */
+    margin-bottom: 3rem;
+    font-size: 3rem;
+    margin-top: -4rem;
 }
 
 .blog-posts {
@@ -22,7 +22,7 @@
     flex-direction: column;
     align-items: center;
     text-align: center;
-    overflow: hidden; /* Add this to contain the zoomed image */
+    overflow: hidden;
 }
 
 .blog-image {
@@ -31,17 +31,17 @@
     object-fit: cover;
     border-radius: 8px;
     margin-bottom: 0.5rem;
-    transition: transform 0.3s ease; /* Add this for smooth zoom effect */
+    transition: transform 0.3s ease;
 }
 
 .blog-post:hover .blog-image {
-    transform: scale(1.1); /* Zoom in by 10% on hover */
+    transform: scale(1.1);
 }
 
 .blog-post h2 {
     font-size: 1.2rem;
     margin-top: 0;
-    margin-bottom: 0.3rem; /* Reduced from 0.5rem to make room for the date */
+    margin-bottom: 0.3rem;
 }
 
 .blog-post a {
@@ -51,7 +51,7 @@
 
 .blog-title {
     display: inline-block;
-    line-height: 1.4; /* Adjust this value to control line spacing */
+    line-height: 1.4;
 }
 
 .blog-title .line {
@@ -78,9 +78,8 @@
     transition: transform 0.3s ease;
 }
 
-/* Add this new rule for the second line */
 .blog-title .line:nth-child(2)::after {
-    transition-delay: 0.1s; /* Adjust this value to control the delay */
+    transition-delay: 0.1s;
 }
 
 .blog-post:hover .blog-title .line::after {
@@ -89,7 +88,7 @@
 
 .blog-date {
     font-size: 0.9rem;
-    color: #666; /* A subtle gray color */
+    color: #666;
     margin: 0;
     text-decoration: none;
 }
